@@ -85,9 +85,15 @@ or
 behave tests/features/prototype.feature  
 ```
 
+Custom message fail: https://docs.pytest.org/en/stable/how-to/capture-warnings.html#custom-failure-messages
 
+video Netflix: https://www.youtube.com/watch?v=7ER9tqiNack&t=2s
 
+## Spark library to testing: 
+assertDataframeEqual(df,df)
 
+Best parctices:
+create small, reusable and well-named function;
 
 
 
