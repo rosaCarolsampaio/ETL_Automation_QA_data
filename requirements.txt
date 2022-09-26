@@ -1,0 +1,11 @@
+psycopg2
+pyspark
+sqlalchemy
+matplotlib
+
+
+pytest
+pytest-bdd
+behave
+papermill[all]
+pyspark-test
