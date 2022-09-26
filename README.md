@@ -1,25 +1,32 @@
-# Etl
-
+# ETL Automation Workflow Testing
+## Spark cluster:
 install  spark on Ubuntu: https://phoenixnap.com/kb/install-spark-on-ubuntu
 examples:/home/rosasilva/Downloads/spark-3.3.0-bin-hadoop3/examples/src/main/python/sql
 
-config 
-
+## config 
 spark: /opt/spark
+start master:
+```
 /opt/spark/sbin/start-master.sh
+```
 
 locate jdk:  update-alternatives --config java 
 jdk: /usr/lib/jvm/java-11-openjdk-amd64
 
+config
+```
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
+```
 
-start worker process:
+### start slave worker process:
+```
 /opt/spark/sbin/start-slave.sh spark://gitlab:7077
+```
 
 pyspark --packages org.postgresql:postgresql:42.2.10
 
 
-configuration:
+### spark configuration:
 spark_session = SparkSession.builder.master("ip").enableHiveSupport().getOrCreate()
 
 spark_session.conf.set("spark.executor.memory", '8g')
@@ -29,20 +36,23 @@ spark_session.conf.set("spark.driver.memory", '8g')
 sc = spark_session.sparkContext
 
 
-install libs:
+## Install libs:
 pip (to check: pip --version )
 python  (to check: python3 --version)
 
+```
+pip install -r requirements.txt
+```
 
-Pytest:
-
-command to test run:
+## command to generate BDD skeleton run:
+```
 pytest-bdd generate src/tests/features 
+```
 
 
-
- papermill 
- example:
+## Papermill 
+Libs example:
+ ```
  import papermill as pm
 
 pm.execute_notebook(
@@ -50,22 +60,30 @@ pm.execute_notebook(
    'path/to/output.ipynb',
    parameters = dict(alpha=0.6, ratio=0.1)
 )
+```
 
-location:
+### load notebook from:
 Local file system: local
 HTTP, HTTPS protocol: http://, https://
 Amazon Web Services: AWS S3 s3://
 Azure: Azure DataLake Store, Azure Blob Store adl://, abs://
 Google Cloud: Google Cloud Storage gs://
 
+### cli:
 
+```
 papermill ./notebooks/connection.ipynb  ./reports/connection_report.ipynb  -p db db-test 
+```
 
 
-command BDD
+#command BDD run scenarios:
+```
+
 pytest
-behave tests/features/prototype.feature  
+or 
 
+behave tests/features/prototype.feature  
+```
 
 
 
