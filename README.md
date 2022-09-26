@@ -90,9 +90,14 @@ Custom message fail: https://docs.pytest.org/en/stable/how-to/capture-warnings.h
 video Netflix: https://www.youtube.com/watch?v=7ER9tqiNack&t=2s
 
 ## Spark library to testing: 
+https://pypi.org/project/pyspark-test/
 assertDataframeEqual(df,df)
 
-Best parctices:
+example: https://medium.com/@davisjustin42/writing-pyspark-unit-tests-1e0ef6187f5e
+https://mungingdata.com/pyspark/testing-pytest-chispa/
+
+
+# Best parctices:
 create small, reusable and well-named function;
 
 
