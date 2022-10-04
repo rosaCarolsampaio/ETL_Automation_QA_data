@@ -1,4 +1,8 @@
+# this is a simple prototype to clarify the possible flow to automation and highlight the main result.
+
 # ETL Automation Workflow Testing
+
+
 ## Spark cluster:
 install  spark on Ubuntu: https://phoenixnap.com/kb/install-spark-on-ubuntu
 examples:/home/rosasilva/Downloads/spark-3.3.0-bin-hadoop3/examples/src/main/python/sql
