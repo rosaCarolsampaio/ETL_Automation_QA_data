@@ -7,6 +7,10 @@
 ### fields total;
 ### records total.
 
+## Data visualization: 
+### functional elements;
+### The correct data are shown.
+
 
 # Local Spark 
 ## install spak locally
