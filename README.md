@@ -2,7 +2,10 @@
 
 # ETL Automation Workflow Testing
 
-
+## Data load testing:
+### did you load the data in a correct way?
+### fields total;
+### records total.
 
 
 # Local Spark 
