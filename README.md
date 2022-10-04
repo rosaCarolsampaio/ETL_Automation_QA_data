@@ -3,13 +3,17 @@
 # ETL Automation Workflow Testing
 
 
+
+
+# Local Spark 
+## install spak locally
 ## Spark cluster:
 install  spark on Ubuntu: https://phoenixnap.com/kb/install-spark-on-ubuntu
 examples:/home/rosasilva/Downloads/spark-3.3.0-bin-hadoop3/examples/src/main/python/sql
 
-## config 
-spark: /opt/spark
-start master:
+## config. You need start spark Master and one job:
+($ pwd) spark: /opt/spark
+### start master:
 ```
 /opt/spark/sbin/start-master.sh
 ```
@@ -17,7 +21,7 @@ start master:
 locate jdk:  update-alternatives --config java 
 jdk: /usr/lib/jvm/java-11-openjdk-amd64
 
-config
+### config
 ```
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 ```
@@ -27,6 +31,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 /opt/spark/sbin/start-slave.sh spark://gitlab:7077
 ```
 
+### For spark to use the postgres driver 
 pyspark --packages org.postgresql:postgresql:42.2.10
 
 
@@ -123,4 +128,21 @@ git branch -M main
 git push -uf origin main
 ```
 
-## Integrate with your tools
+# ETL Testing: what should we test?
+## Consistency: for example, all values are in unique way? dollar != $ != USD;
+## Acuracy: is all data valid and in a pattern?
+## Vality: rules for a specific attibute, per table and per attibute;
+## Completeness: values null are treated, total of records by attribute load from sourge to target;
+## uniqueness: duplication of data per table;
+## Timeliness:data in a given period of time;
+## Integrity: correct e full load from source to target;
+## Profiling: number of records per table.
+
+
+
+
+# Why should we have ETL Automation testing?
+## Ad-hoc testing for any strategy in Quality Assurance can be time-consuming, inefficient and inconsitency.
+
+
+
